@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="shoutout">
+  <h1>Set your Instagram free!</h1>
+  <p><strong>{{ num_users }} people</strong> are releasing their Instagram photos
+  under a Creative Commons license.</p>
+  <div class="ask"><a href="{% url socialauth_begin backend='instagram' %}" class="button">Join them</a> and make the world a better, more creative place!</div>
+</div>
+
+<div id="have_licensed">
+    {% for info in info_objs %}
+        <div class="person"><a href="{% url instagram-list username=info.instagram_username %}"><img src="{{ info.avatar_url }}"/></a></div>
+    {% endfor %}
+</div>
+
+<div id="recent_photos">
+  {% for photo in recent_photos %}
+      <div class="photo">
+          <a href="{{ photo.get_absolute_url }}"><img src="{{ photo.image_low_resolution }}"/></a>
+          <a href="{{ photo.license_info.license_url }}" target="_blank"><div class="license-type {{ photo.license_info.license }}"></div></a>
+          <div class="attribution">
+            <a href="{% url instagram-list username=photo.license_info.instagram_username %}"><img src="{{ photo.license_info.avatar_url }}"/>{{ photo.license_info.full_name }}</a>
+          </div>
+      </div>
+  {% endfor %}
+</div>
+
+
+<div class="callout"><div class="ask"><a href="{% url socialauth_begin backend='instagram' %}" class="button">Join them</a> and make the world a better, more creative place!</div></div>
+
+{% endblock %}

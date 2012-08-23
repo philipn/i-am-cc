@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="general_main">
+
+<h2>API</h2>
+
+<p>Just visit <code><a href="/api/?format=json">/api/</a></code>.  The API is RESTful and should be self-describing.  Please be kind for now - we haven't set up limits, etc yet.</p>
+
+<p>In a browser you'll need to add the <code>?format=json</code> query string.  Outside of the browser you don't.</p>
+
+<p>The API uses the conventions of the <a href="http://django-tastypie.readthedocs.org/en/latest/interacting.html">tastypie framework</a>.  In particular, you can filter based on attributes.  Some info <a href="http://django-tastypie.readthedocs.org/en/latest/resources.html#basic-filtering">here</a>.</p>
+
+<h2>Simple examples</h2>
+
+<p>For instance, to find all photos by the instagram user <code>philipn</code>, you would do:</p>
+
+<blockquote><code>/api/instagram_photo/?license_info__instagram_username=philipn</code></blockquote>
+
+<p>Or to find all photos licensed under CC-BY you would do:</p>
+
+<blockquote><code>/api/instagram_photo/?license_info__license=CC-BY</code></blockquote>
+
+<p>To find all photos under CC-BY-SA that are taken with the 'Hudson' instagram filter, you would do:</p>
+
+<blockquote><code>/api/instagram_photo/?filter=Hudson&amp;license_info__license=CC-BY-SA</code></blockquote>
+
+<p>More soon.  Help out by <a href="http://github.com/philipn/i-am-cc" target="_blank">issuing pull request on github</a>!</p>
+
+</div>
+{% endblock %}

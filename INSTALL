@@ -1,0 +1,3 @@
+0. cp cc/cc/localsettings_template.py cc/cc/localsettings.py and edit.
+1. pip install -r requirements.txt
+2. python cc/manage.py runserver

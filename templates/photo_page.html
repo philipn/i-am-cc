@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="user_info"><a href="{% url instagram-list username=photo.license_info.instagram_username %}"><img src="{{ photo.license_info.avatar_url }}"/><span class="name">{{ photo.license_info.full_name }} ({{ photo.license_info.instagram_username }})</span></a></div>
+
+<div class="attribution_how_to">
+<a href="{{ photo.license_info.license_url }}" rel="license"><div class="license-type {{ photo.license_info.license }}"></div></a>
+<p>This photo is licensed under the terms of the <strong><a href="{{ photo.license_info.license_url }}" rel="license">{{ photo.license_info.license_full_name }} license</a></strong>.</p>
+
+{% ifnotequal photo.license_info.license "CC0" %}<p>You must attribute your usage to "{{ photo.license_info.full_name }}".</p> {% endifnotequal %}
+</div>
+
+<div class="main_photo">
+    <a href="{{ photo.image_standard_resolution }}" target="_blank"><img src="{{ photo.image_standard_resolution }}"/></a>
+    {% if photo.caption %}
+      <div class="caption">{{ photo.caption }}</div>
+    {% endif %}
+    <a href="{{ photo.license_info.license_url }}"><div class="license-type {{ photo.license_info.license }}"></div></a>
+    <div class="attribution">
+      <a href="{% url instagram-list username=photo.license_info.instagram_username %}"><img src="{{ photo.license_info.avatar_url }}"/>{{ photo.license_info.full_name }}</a>
+    </div>
+</div>
+
+<div class="callout"><div class="ask"><a href="{% url socialauth_begin backend='instagram' %}" class="button">Join {{ photo.license_info.full_name }}</a> and make the world a better, more creative place!</div></div>
+
+
+{% endblock %}

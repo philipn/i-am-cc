@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>i-am-cc.org - Free your Instagram photos with a Creative Commons license!</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Set your Instagram free with a Creative Commons license!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://i-am-cc.org/static/img/fb_set_free.png"/>
+    <meta property="og:url" content="http://i-am-cc.org/" />
+    <link href="/static/css/normalize.css" rel="stylesheet">
+    <link href="/static/css/base.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="container">
+    {% block title %}<h1 id="title"><a href="/">i-am-cc.org</a></h1>{% endblock %}
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    <div id="footer">
+      <div id="site_attribution">
+      Read about <a href="/manifesto/">why we're doing this.</a><br/><br/>
+      Brought to you by <a href="http://twitter.com/philipn">Philip Neustrom</a>.  Fork <a href="http://github.com/philipn/i-am-cc">us on github</a>!
+      </div>
+      <div id="api">
+          Use our <a href="{% url about-api %}">API</a> to find photographs that are CC licensed!
+      </div>
+    </div>
+    <div id="trademarks">
+      This website uses the Instagram(tm) API and is not endorsed or certified by Instagram or Instagram, Inc.<br/>All Instagram(tm) logos and trademarks displayed on this website are property of Instagram, Inc.<br/>This website is not affiliated with or endorsed or certified by Creative Commons.
+    </div>
+    {% endblock %}
+
+    </div>
+  </body>
+</html>

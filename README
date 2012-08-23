@@ -1,0 +1,31 @@
+This is the code that powers http://i-am-cc.org.
+
+i-am-cc.org allows people to easily license their Instagram photos
+under a Creative Commons license and provides a nice little browsing
+experience and API for accessing the assets.
+
+Manifesto
+=========
+
+Flickr has something like 200,000,000+ images licensed under Creative Commons,
+making them the biggest repository of Creative Commons work in the world. CC
+work from flickr is regularly used by Wikipedia, magazines, books, bloggers,
+everyone!  It's downright fantastic!
+
+Instagram gets something like 5+ million new photos a day.  If we could get
+just a small fraction of people to agree to CC license their photos we could
+make a huge impact.  And unlike flickr, instgram shots are basically
+disposable -- few, if any, consider their instagram to be something they could
+eventually make money off of (which isn't the case with flickr, which has a
+really awesome professional and semi-professional photography community)
+
+Right now I just provide a simple way to agree to license your existing photos
++ photos you'll take for the next 3 months under a CC license.  I kept the
+timeframe 3 months because I don't want people to forget that they signed
+up for this -- I want this to be a really legitimate repository of free images.
+I'm capturing all of the Instagram API details and the i-am-cc.org API exposes
+most of them.  Geo API support coming soon (like next week, when I have time)
+
+Let's make this happen!  Help spread the word!
+
+http://i-am-cc.org

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="signup_main" style="margin-bottom: 0.8em;">
+<p>First, read <a href="http://creativecommons.org/choose/" target="_blank">this page</a> to read up on Creative Commons and decide on a license for your work.</p>
+</div>
+<div id="signup_main">
+{{form.errors}}
+<form method="post" action="">{% csrf_token %}
+
+  <p>I agree to release all of the Instagram photographs I take from now until {{ end_date|date:"N j, o" }} under the following license:</p>
+
+  {{ form.license }}
+
+  <p>Photographs will be attributed to:</p>
+
+  <p>{{ form.full_name }}</p>
+
+  <p>This license is non-revocable: photos you take between now and {{ end_date|date:"N j, o" }} will remain under the license you select in perpetuity, even if you change your mind.<p>
+
+  <p>{{ form.old_photos }}<label for="id_old_photos"> Release all of my old photos under this license, too!</label></p>
+
+  <p>Your email<sup>*</sup>: {{ form.email }}</p>
+
+  <input type="submit" value="I agree" class="button"/>
+
+  <p class="small_note">* We'll never spam you or sell your email
+  address to anyone. We need your email to remind you to come back here
+  and agree again to license your new photographs on {{ end_date }}. And
+  in case Instagram does some weird stuff with their API.</p>
+</div>
+
+{% if form.license %}
+<div id="existing_license">
+You can also <input type="submit" name="stop" value="stop releasing photos"/> under the {{ form.license.value }} license.
+</div>
+{% endif %}
+
+</form>
+
+{% endblock %}

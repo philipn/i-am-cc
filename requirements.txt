@@ -1,0 +1,4 @@
+Django==1.4
+django-social-auth
+django-tastypie
+slumber

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="signup_main">
+<p>You're now licensing your instagram photographs under a Creative Commons license.  Congratulations, you're helping lots of people out!</p>
+
+<p>Please share this!<br/>
+
+<a class="button twitter" href="https://twitter.com/share?url=&text=I%20started%20sharing%20my%20Instagram%20photos%20under%20a%20Creative%20Commons%20license.%20Join%20me%20and%20set%20your%20Instagram%20free%21%20http%3A//i-am-cc.org" target="_blank">on twitter</a>
+<script>function fbs_click() {u='http://i-am-cc.org/';t="i-am-cc.org: license your Instagram photos under Creative Commons!";window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script><a class="button facebook" href="http://www.facebook.com/share.php?u=<url>" onclick="return fbs_click()" target="_blank">on facebook</a>
+</p>
+</div>
+
+<p>You can <a href="{% url instagram-setup %}">update your settings</a> or <a href="{% url instagram-setup %}">discontinue sharing</a>.</p>
+{% endblock %}
