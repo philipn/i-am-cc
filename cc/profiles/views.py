@@ -18,7 +18,7 @@ from utils import get_access_token, from_unix_time, to_unix_time
 
 class LicenseForm(forms.ModelForm):
     email = forms.EmailField(required=True)
-    old_photos = forms.BooleanField(required=False)
+    old_photos = forms.BooleanField(required=False, initial=True)
 
     class Meta:
         model = InstagramInfo
@@ -97,7 +97,7 @@ class InstagramLicenseUpdate(UpdateView):
 
 def index(request):
     context = {
-        'info_objs': InstagramInfo.objects.all().order_by('-start_date')[:50],
+        'info_objs': InstagramInfo.objects.all().exclude(end_date=None).order_by('-end_date')[:50],
         'num_users': len(InstagramInfo.objects.values('user').distinct()),
         'recent_photos': get_recent_photos(limit=50),
     }
